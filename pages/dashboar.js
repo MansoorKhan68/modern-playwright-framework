@@ -6,7 +6,7 @@ export class DashboardPage {
     this.dashboardUrl = 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index';
     this.dashboardTitle = page.locator('//span[h6[text()="Dashboard"]]');
   }
-  async goto() {
+  async gotoDashboard() {
     await this.page.goto(this.dashboardUrl);
   }
 

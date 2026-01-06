@@ -4,9 +4,9 @@ import { DashboardPage } from '../../pages/dashboar';
 test.describe('OrangeHRM Dashboard', () => {
 
   test('Dashboard loads after login', async ({ page }) => {
-    const dashboard = DashboardPage(page);
+    const dashboard = new DashboardPage(page);
     await dashboard.gotoDashboard();
-    await dashboard.verifyDashboard();
+    await dashboard.verifyDashboardLoaded();
   });
 
 });
