@@ -2,7 +2,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './tests',
+  testDir: './src/tests',
   globalSetup: './global-setup.js',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,

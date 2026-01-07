@@ -1,5 +1,5 @@
 import { chromium, expect } from '@playwright/test';
-import {Auth} from './pages/auth.js'
+import {Auth} from './src//pages/auth.js'
 import dotenv from 'dotenv';
 
 
