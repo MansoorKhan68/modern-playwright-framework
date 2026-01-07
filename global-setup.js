@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default async () => {
-  const browser = await chromium.launch({headless:false});
+  const browser = await chromium.launch();
   const page = await browser.newPage();
   const auth = new Auth(page);
   const userName = process.env.HRM_USERNAME;
