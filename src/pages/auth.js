@@ -8,7 +8,7 @@ export class Auth {
     this.userName = page.locator('input[placeholder="Username"]');
     this.password = page.locator('input[placeholder="Password"]');
     this.loginButton = page.locator('button[type="submit"]');
-    this.dashboardTitle = page.locator('//span[h6[text()="Dashboard"]]'); // added
+    this.dashboardTitle = page.locator("//span[text()='Admin']");
   }
 
   // Go to login page
@@ -33,6 +33,6 @@ export class Auth {
 
   // Verify dashboard is visible after login
   async verifyDashboardVisible() {
-    await expect(this.dashboardTitle).toBeVisible({ timeout: 10000 });
+    await expect(this.dashboardTitle).toBeVisible();
   }
 }

@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      HRM_USERNAME: ${{ secrets.HRM_USERNAME }}
-      HRM_PASSWORD: ${{ secrets.HRM_PASSWORD }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
 
     steps:
       - name: Checkout repository
@@ -41,11 +41,6 @@ jobs:
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-
-      - name: Debug environment variables
-        run: |
-          echo "HRM_USERNAME is set? -> ${HRM_USERNAME:+YES}"
-          echo "HRM_PASSWORD is set? -> ${HRM_PASSWORD:+YES}"
 
       - name: Run Playwright tests
         run: npx playwright test --reporter=list
