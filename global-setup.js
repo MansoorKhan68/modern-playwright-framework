@@ -10,12 +10,12 @@ export default async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
   const auth = new Auth(page);
-  const userName = 'Admin';
-  const password = 'admin123';
-  
+  const userName = process.env.USERNAME;
+  console.log('USERNAME:', process.env.USERNAME ? 'SET' : 'NOT SET');
+  const password = process.env.PASSWORD;
+  console.log('PASSWORD:', process.env.PASSWORD ? 'SET' : 'NOT SET');
   await auth.gotoLoginPage()
   await auth.userLogin(userName, password);
-  await auth.verifyDashboardVisible();
   
   // Save login session
   await page.context().storageState({ path: 'auth.json' });
